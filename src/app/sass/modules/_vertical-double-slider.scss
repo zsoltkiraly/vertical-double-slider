@@ -1,0 +1,216 @@
+section.vertical-double-slider {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
+
+    @include box-sizing(border-box);
+    @include flex-box();
+
+    &.disabled-click {
+        .dynamic {
+            &:after {
+                content: '';
+                z-index: 5;
+                cursor: pointer;
+
+                @include full-absolute();
+            }
+        }
+    }
+
+    .notransition {
+        @include transition(none !important);
+    }
+
+    .static {
+        @include flex(calc(100% - 615px));
+
+        padding-top: 110px;
+        padding-right: 50px;
+
+        h2 {
+            font-size: 3.5em;
+            font-weight: bold;
+            line-height: 1.05;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+
+        button {
+            display: inline-block;
+            border-radius: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+            line-height: 48px;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+            border-collapse: separate;
+            padding: 0 40px;
+            letter-spacing: .65px;
+            background-color: $blue;
+            border: 0;
+            color: white;
+
+            @include box-sizing(border-box);
+        }
+    }
+
+    .dynamic {
+        padding-left: 100px;
+        height: 715px;
+        overflow: hidden;
+        position: relative;
+
+        @include box-sizing(border-box);
+        @include flex(615px);
+
+        .touch-area  {
+            z-index: 4;
+            height: 100%;
+            cursor: pointer;
+
+            @include full-absolute();
+        }
+
+        .slider-container {
+            height: 100%;
+
+            @include full-block();
+
+            .hand-top,
+            .hand-bottom,
+            .hand-image {
+                position: absolute;
+                background-repeat: no-repeat;
+                
+                @include backface-visibility(hidden);
+                @include background-size(cover);
+            }
+
+            .hand-top {
+                z-index: 3;
+                bottom: 86px;
+                left: 151px;
+                width: 143px;
+                height: 227px;
+                background-image: url(../images/hand_top.png);
+            }
+
+            .hand-bottom {
+                z-index: 2;
+                bottom: -124px;
+                left: 100px;
+                width: 298px;
+                height: 449px;
+                background-image: url(../images/hand_bottom.png);
+            }
+
+            .vertical-slider-hand-image,
+            .vertical-slider-background {
+                position: absolute;
+                overflow: hidden;
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+
+                    @include full-block();
+
+                    li {
+                        margin: 0;
+                        padding: 0;
+                        height: 100%;
+
+                        @include full-block();
+
+                        .image-hand,
+                        .image-background {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background-repeat: no-repeat;
+
+                            @include backface-visibility(hidden);
+                            @include background-size(cover);
+                        }
+
+                        .image-hand {
+                            height: 321px;
+
+                            @include full-block();
+                        }
+
+                        .image-background {
+                            height: 715px;
+
+                            @include full-block();
+                        }
+                    }
+                }
+            }
+
+            .vertical-slider-hand-image {
+                z-index: 2;
+                width: 380px;
+                height: 321px;
+                left: -100px;
+                bottom: 186px;
+            }
+
+            .vertical-slider-background {
+                z-index: 1;
+
+                @include full-absolute();
+
+                &:after {
+                    content: '';
+                    background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 90%);
+                    background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,0.8) 90%);
+                    background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,0.8) 90%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 );
+                
+                    @include full-absolute();
+                }
+            }
+        }
+
+        ul.dots {
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            z-index: 4;
+
+            @include translateY(-50%);
+
+            li {
+                font-size: 0;
+                line-height: 0;
+                border: 1px solid white;
+                background-color: transparent;
+                outline: 0;
+                margin: 0 0 20px;
+                padding: 0;
+                width: 12px;
+                height: 12px;
+                cursor: pointer;
+
+                @include border-radius(50%);
+
+                &.active { background-color: white; }
+                &.last-child { margin-bottom: 0; }
+            }
+        }
+    }
+}

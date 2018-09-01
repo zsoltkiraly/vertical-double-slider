@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <title>Vertical double slider v1.0.2 by Zsolt Kiraly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/scripts.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Vertical double slider <span>Vertical double slider v1.0.2 by Zsolt Kiraly</span></h1>
+    </header>
+
+    <section class="basic-content">
+        <h2>Sed et volutpat ligula</h2>
+        <p>Donec quis lorem sit amet tortor varius consectetur. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum quam diam, sit amet iaculis ex commodo id. Maecenas vitae finibus massa. Suspendisse potenti. Donec pulvinar nunc ut elit porttitor mattis.</p>
+
+        <p>Cras non arcu quis turpis lacinia suscipit et a purus. Mauris eu maximus massa. Nam sed vestibulum orci, ut cursus neque. Fusce eget dui eros. Mauris dictum lacus a eros fermentum, eu fringilla elit scelerisque. Sed et varius mauris. Pellentesque in ligula a mi lobortis rutrum. Vestibulum ac pretium nulla. Pellentesque tempor augue at purus tincidunt, maximus semper nisl blandit.</p>
+
+        <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat a.</p>
+    </section>
+
+    <section class="vertical-double-slider" id="vertical-double-slider-1">
+        <div class="static">
+            <h2>Nulla libero sapien semper acquamac pharetra pellen tesque elit</h2>
+            <p>Etiam imperdiet tortor iaculis sapien gravida rhoncus. Nunc risus nibh, aliquam eu lacus lobortis, imperdiet dignissim turpis. Aenean convallis mauris non eros ullamcorper.</p>
+            <button>Registration</button>
+        </div>
+
+        <div class="dynamic">
+            <div class="touch-area"></div>
+            <div class="slider-container">
+
+                <div class="hand-top"></div>
+                <div class="hand-bottom"></div>
+
+                <div class="vertical-slider-hand-image">
+                    <ul class="notransition">
+                        <li class="active"><div class="image-hand" style="background-image: url(images/tombraider-hand.png);"></div></li>
+                        <li><div class="image-hand" style="background-image: url(images/bladerunner-hand.png);"></div></li>
+                        <li><div class="image-hand" style="background-image: url(images/ready-hand.png);"></div></li>
+                    </ul>
+                </div>
+
+                <div class="vertical-slider-background">
+                    <ul class="notransition">
+                        <li class="active"><div class="image-background" style="background-image: url(images/tombraider-background.png);"></div></li>
+                        <li><div class="image-background" style="background-image: url(images/bladerunner-background.png);"></div></li>
+                        <li><div class="image-background" style="background-image: url(images/ready-background.png);"></div></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        window.addEventListener('load', function() {
+            verticalDoubleSlider.app(
+                config = {
+                    id: 'vertical-double-slider-1',
+                    slideTime: 4000,
+                    transition: 500,
+                    autoplay: true
+                }
+            );
+        }, false);
+    </script>
+
+    <section class="basic-content">
+        <h2>Sed et volutpat ligula</h2>
+        <p>Donec quis lorem sit amet tortor varius consectetur. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum quam diam, sit amet iaculis ex commodo id. Maecenas vitae finibus massa. Suspendisse potenti. Donec pulvinar nunc ut elit porttitor mattis.</p>
+
+        <p>Cras non arcu quis turpis lacinia suscipit et a purus. Mauris eu maximus massa. Nam sed vestibulum orci, ut cursus neque. Fusce eget dui eros. Mauris dictum lacus a eros fermentum, eu fringilla elit scelerisque. Sed et varius mauris. Pellentesque in ligula a mi lobortis rutrum. Vestibulum ac pretium nulla. Pellentesque tempor augue at purus tincidunt, maximus semper nisl blandit.</p>
+
+        <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat a.</p>
+    </section>
+
+    <footer>
+        <span>GitHub:</span> <a href="https://github.com/zsoltkiraly" title="GitHub" target="_blank">https://github.com/zsoltkiraly</a>
+    </footer>
+
+</body>
+</html>
