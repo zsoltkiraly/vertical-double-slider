@@ -294,8 +294,13 @@
 }
 
 @mixin flex-wrap($value) {
-    -webkit-flex-wrap:  $value;
+    -webkit-flex-wrap: $value;
     flex-wrap: $value;
+}
+
+@mixin flex-grow($value) {
+    -webkit-flex-grow: $value;
+    flex-grow: $value;
 }
 
 @mixin justify-content($value) {

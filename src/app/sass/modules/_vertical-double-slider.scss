@@ -9,6 +9,10 @@ section.vertical-double-slider {
     @include box-sizing(border-box);
     @include flex-box();
 
+    @media only screen and (max-width: $tablet) {
+        @include flex-wrap(wrap);
+    }
+
     &.disabled-click {
         .dynamic {
             &:after {
@@ -64,9 +68,11 @@ section.vertical-double-slider {
                 background-color: $blue;
                 border: 0;
                 color: white;
+                margin-bottom: 25px;
 
                 @include transition(background-color .3s ease-out);
                 @include box-sizing(border-box);
+
                 &:hover { background-color: $black; }
             }
         }
@@ -77,9 +83,13 @@ section.vertical-double-slider {
         height: 715px;
         overflow: hidden;
         position: relative;
+        max-width: 615px;
+        width: 100%;
+
+        @media only screen and (max-width: $mobile) { padding-left: 0; }
 
         @include box-sizing(border-box);
-        @include flex(615px);
+        @include flex-grow(1);
 
         .touch-area  {
             z-index: 4;
@@ -111,6 +121,8 @@ section.vertical-double-slider {
                 width: 143px;
                 height: 227px;
                 background-image: url(../images/hand_top.png);
+
+                @media only screen and (max-width: $mobile) { display: none; }
             }
 
             .hand-bottom {
@@ -120,6 +132,8 @@ section.vertical-double-slider {
                 width: 298px;
                 height: 449px;
                 background-image: url(../images/hand_bottom.png);
+
+                @media only screen and (max-width: $mobile) { display: none; }
             }
 
             .vertical-slider-hand-image,
@@ -200,6 +214,8 @@ section.vertical-double-slider {
             z-index: 4;
 
             @include translateY(-50%);
+
+            @media only screen and (max-width: $mobile) { right: 15px; }
 
             li {
                 font-size: 0;
