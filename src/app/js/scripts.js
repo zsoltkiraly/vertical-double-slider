@@ -38,7 +38,7 @@ var verticalDoubleSlider = function() {
 
         setTimeout(function() {
             el.classList.remove('disabled-click');
-        }, c.transition);
+        }, c.transition + 100);
     }
 
     function dotsDOM(s) {
@@ -441,6 +441,17 @@ var verticalDoubleSlider = function() {
         }
     }
 
+    function loading(container) {
+        setTimeout(function() {
+            container.classList.remove('show');
+
+            setTimeout(function() {
+                container.classList.remove('loading');
+            }, 1000);
+
+        }, 1000);
+    }
+
     function app(id) {
 
         var slider = document.querySelector('#' + config.id +'');
@@ -450,7 +461,9 @@ var verticalDoubleSlider = function() {
             setId(slider);
             cloneDOM(slider, config);
 
-            movements(slider, config)
+            movements(slider, config);
+
+            loading(slider);
         }
     }
 
