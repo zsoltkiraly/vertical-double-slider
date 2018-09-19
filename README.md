@@ -1,7 +1,9 @@
 # Vertical double slider v1.0.2
 
 <br />
-<a href="http://zsoltkiraly.com/developments/vertical-double-slider/" target="_blank">DEMO PAGE</a>
+<a href="https://zsoltkiraly.com/developments/vertical-double-slider/" target="_blank">DEMO PAGE</a>
+
+<img src="https://zsoltkiraly.com/developments/_images/vertical-double-slider-001.jpg">
 
 #
 <br />
