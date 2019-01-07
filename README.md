@@ -3,8 +3,6 @@
 <br />
 <a href="https://zsoltkiraly.com/developments/vertical-double-slider/" target="_blank">DEMO PAGE</a>
 
-<img src="https://zsoltkiraly.com/developments/_images/vertical-double-slider-001.jpg">
-
 #
 <br />
 
